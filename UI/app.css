@@ -1,0 +1,283 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  min-height: 100vh;
+  color: #fff;
+}
+
+h1 {
+  text-align: center;
+  margin: 30px 0;
+  font-size: 36px;
+  letter-spacing: 1px;
+  background: linear-gradient(90deg, #00f260, #0575e6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 35px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
+}
+
+.celebrity-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.celebrity-card {
+  flex: 1;
+  text-align: center;
+  transition: transform 0.4s ease;
+}
+
+.celebrity-card:hover {
+  transform: translateY(-10px) scale(1.05);
+}
+
+.celebrity-card img {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid rgba(255,255,255,0.4);
+  box-shadow: 0 0 20px rgba(0,255,255,0.4);
+}
+
+.celebrity-card p {
+  margin-top: 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.upload-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 30px;
+  align-items: center;
+  margin-top: 30px;
+}
+
+#dropzone {
+  height: 260px;
+  border-radius: 20px;
+  border: 2px dashed rgba(255,255,255,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.06);
+  transition: all 0.3s ease;
+}
+
+#dropzone:hover {
+  background: rgba(255,255,255,0.12);
+  box-shadow: 0 0 25px rgba(0,255,255,0.3);
+}
+
+#result-image img {
+  width: 240px;
+  border-radius: 20px;
+  box-shadow: 0 0 40px rgba(0,255,180,0.6);
+  border: 4px solid rgba(0,255,180,0.7);
+}
+
+#predicted-name {
+  text-align: center;
+  font-size: 28px;
+  font-weight: bold;
+  margin-top: 15px;
+  background: linear-gradient(90deg, #00f260, #0575e6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+button {
+  margin-top: 20px;
+  padding: 14px 35px;
+  border-radius: 30px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  background: linear-gradient(90deg, #00f260, #0575e6);
+  color: #fff;
+  box-shadow: 0 0 20px rgba(0,255,255,0.6);
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 35px rgba(0,255,255,0.9);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: rgba(255,255,255,0.1);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+th {
+  padding: 14px;
+  background: linear-gradient(90deg, #00f260, #0575e6);
+  text-align: left;
+}
+
+td {
+  padding: 14px;
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+}
+
+.progress {
+  height: 14px;
+  background: rgba(255,255,255,0.2);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 6px;
+}
+
+.progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #00f260, #0575e6);
+  box-shadow: 0 0 15px rgba(0,255,255,0.8);
+}
+
+#loading {
+  font-size: 18px;
+  text-align: center;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 0.3; }
+  50% { opacity: 1; }
+  100% { opacity: 0.3; }
+}
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  padding: 18px 30px;
+
+  background: linear-gradient(
+    135deg,
+    #2c5364,
+    rgba(5, 117, 230, 0.25)
+  );
+
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+
+  box-shadow:
+    0 8px 25px rgba(0, 0, 0, 0.35),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.2);
+}
+
+
+.navbar-brand {
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+
+  background: linear-gradient(
+    90deg,
+    #3a6c81,
+    #2c5364
+  );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  text-transform: uppercase;
+}
+
+.celebrity-card,
+.prediction-card,
+.card,
+.card-body,
+.card-img,
+figure,
+.thumbnail,
+.image-card,
+img-container {
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+
+#error {
+  margin: 25px auto;
+  padding: 18px 24px;
+  max-width: 650px;
+
+  background: rgba(255, 80, 80, 0.12);
+  backdrop-filter: blur(10px);
+
+  border-left: 6px solid #ff4d4d;
+  border-radius: 14px;
+
+  box-shadow: 
+    0 10px 30px rgba(255, 0, 0, 0.25),
+    inset 0 0 20px rgba(255, 80, 80, 0.2);
+
+  animation: slideFadeIn 0.5s ease;
+}
+
+#error p {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 500;
+  color: #ffd6d6;
+  letter-spacing: 0.4px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+#error p::before {
+  content: "⚠️";
+  font-size: 22px;
+}
+
+.celebrity-card,
+.card {
+  padding: 0 !important;
+  margin: 0 !important;
+  border: none !important;
+}
+
+.custom-circle-image {
+  width: 10vw; 
+  height: 15vw;
+}
+
+@media (max-width: 900px) {
+  .celebrity-row {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .upload-section {
+    grid-template-columns: 1fr;
+  }
+
+  #result-image img {
+    width: 200px;
+  }
+}

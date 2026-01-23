@@ -1,0 +1,27 @@
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Virtual environments
+.venv/
+env/
+venv/
+
+# Environment variables
+.env
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Dataset / images 
+model/dataset/
+
+# macOS system files
+.DS_Store
+
+# Node / frontend
+node_modules/
+
+# Optional: ML model files (comment this if you want to upload models)
+# *.pkl

@@ -1,0 +1,7 @@
+Flask
+numpy
+opencv-python
+PyWavelets
+joblib
+scikit-learn
+gunicorn
